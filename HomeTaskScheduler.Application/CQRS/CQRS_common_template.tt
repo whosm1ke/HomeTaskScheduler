@@ -1,0 +1,94 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+
+<#
+    string name = "fsdfsdf";
+    string basePath = Path.Combine(Directory.GetCurrentDirectory(), name);
+
+    // Create directories
+    Directory.CreateDirectory(Path.Combine(basePath, "Handlers", "Commands"));
+    Directory.CreateDirectory(Path.Combine(basePath, "Handlers", "Queries"));
+    Directory.CreateDirectory(Path.Combine(basePath, "Requests", "Commands"));
+    Directory.CreateDirectory(Path.Combine(basePath, "Requests", "Queries"));
+
+    // Create files with templates
+    CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"Create{name}CommandHandler.cs"),
+        GetCommandHandlerTemplate(name, "Create"));
+    CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"Update{name}CommandHandler.cs"),
+        GetCommandHandlerTemplate(name, "Update"));
+    CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"Delete{name}CommandHandler.cs"),
+        GetCommandHandlerTemplate(name, "Delete"));
+    CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"Get{name}RequestHandler.cs"),
+        GetQueryHandlerTemplate(name, "Get"));
+    CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"Get{name}sRequestHandler.cs"),
+        GetQueryHandlerTemplate(name, "GetAll"));
+    CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Create{name}Command.cs"),
+        GetCommandTemplate(name, "Create"));
+    CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Update{name}Command.cs"),
+        GetCommandTemplate(name, "Update"));
+    CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Delete{name}Command.cs"),
+        GetCommandTemplate(name, "Delete"));
+    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}Request.cs"), GetQueryTemplate(name, "Get"));
+    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}sRequest.cs"), GetQueryTemplate(name, "GetAll"));
+#>
+
+<#+
+    void CreateFile(string path, string content)
+    {
+        File.WriteAllText(path, content);
+    }
+
+    string GetCommandTemplate(string name, string action)
+    {
+        return $@"using MediatR;
+
+public class {action}{name}Command : IRequest<Unit>
+{{
+
+}}
+";
+    }
+
+    string GetQueryTemplate(string name, string action)
+    {
+        return $@"using MediatR;
+
+public class {action}{name}Request : IRequest<Unit>
+{{
+
+}}
+";
+    }
+
+    string GetCommandHandlerTemplate(string name, string action)
+    {
+        return $@"using MediatR;
+
+public class {action}{name}CommandHandler : IRequestHandler<{action}{name}Command, Unit>
+{{
+    public async Task<Unit> Handle({action}{name}Command request, CancellationToken cancellationToken)
+    {{
+        return Unit.Value;
+    }}
+}}
+";
+    }
+
+    string GetQueryHandlerTemplate(string name, string action)
+    {
+        return $@"
+using MediatR;
+
+public class {action}{name}RequestHandler : IRequestHandler<{action}{name}Request, Unit>
+{{
+    public async Task<Unit> Handle({action}{name}Request request, CancellationToken cancellationToken)
+    {{
+        return Unit.Value;
+    }}
+}}
+";
+    }
+#>

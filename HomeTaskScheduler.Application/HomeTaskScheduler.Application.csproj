@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.4.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0-rc.2.24473.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="CQRS\CQRS_common_template.tt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>CQRS_common_template.cs</LastGenOutput>
+      </None>
+      <None Update="CQRS\CQRS_custom_template.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>CQRS_custom_template.cs</LastGenOutput>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="CQRS\CQRS_common_template.cs">
+        <AutoGen>True</AutoGen>
+        <DesignTime>True</DesignTime>
+        <DependentUpon>CQRS_common_template.tt</DependentUpon>
+      </Compile>
+      <Compile Update="CQRS\CQRS_custom_template.cs">
+        <AutoGen>True</AutoGen>
+        <DesignTime>True</DesignTime>
+        <DependentUpon>CQRS_custom_template.tt</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Contracts\Persistence\" />
+      <Folder Include="MapProfiles\" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+﻿services:
+  hometaskscheduler.api:
+    image: hometaskscheduler.api
+    build:
+      context: .
+      dockerfile: HomeTaskScheduler.API/Dockerfile

@@ -1,0 +1,8 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+/.idea
+/HomeTaskScheduler.UI/node_modules
+/HomeTaskScheduler.UI/api-gen/node_modules

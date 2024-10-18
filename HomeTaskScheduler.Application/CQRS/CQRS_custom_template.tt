@@ -1,0 +1,93 @@
+<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+
+<#
+
+            bool isCommand = true;
+            string REQUEST_NAME = "SendInvite";
+            string HANDLER_NAME = $"{REQUEST_NAME}Handler";
+            string RETURN_TYPE_NAME = "DTO";
+            string FOLDER_NAME = "DTO";
+            string basePath = Path.Combine(Directory.GetCurrentDirectory(), FOLDER_NAME);
+
+            Directory.CreateDirectory(Path.Combine(basePath, "Requests", "Commands"));
+            Directory.CreateDirectory(Path.Combine(basePath, "Handlers", "Commands"));
+
+            if (isCommand)
+            {
+                CreateFile(Path.Combine(basePath, "Requests", "Commands", $"{REQUEST_NAME}.cs"),
+                    GetCommandTemplate(REQUEST_NAME, RETURN_TYPE_NAME));
+                CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"{HANDLER_NAME}.cs"),
+                    GetCommandHandlerTemplate(HANDLER_NAME, REQUEST_NAME, RETURN_TYPE_NAME));
+            }
+            else
+            {
+                CreateFile(Path.Combine(basePath, "Requests", "Queries", $"{REQUEST_NAME}.cs"),
+                    GetQueryTemplate(REQUEST_NAME, RETURN_TYPE_NAME));
+                CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"{HANDLER_NAME}.cs"),
+                    GetQueryHandlerTemplate(HANDLER_NAME, REQUEST_NAME, RETURN_TYPE_NAME));
+            }
+#>
+
+<#+
+    void CreateFile(string path, string content)
+    {
+        File.WriteAllText(path, content);
+    }
+
+    string GetCommandTemplate(string commandName, string returnType)
+    {
+        return $@"
+using MediatR;
+
+public class {commandName} : IRequest<{returnType}>
+{{
+    
+}}
+";
+    }
+
+    string GetQueryTemplate(string queryName, string returnType)
+    {
+        return $@"
+using MediatR;
+
+public class {queryName} : IRequest<{returnType}>
+{{
+    
+}}
+";
+    }
+
+    string GetCommandHandlerTemplate(string handlerName, string commandName, string returnType)
+    {
+        return $@"
+using MediatR;
+
+public class {handlerName} : IRequestHandler<{commandName}, {returnType}>
+{{
+    public async Task<{returnType}> Handle({commandName} request, CancellationToken cancellationToken)
+    {{
+        return new {returnType}();
+    }}
+}}
+";
+    }
+
+    string GetQueryHandlerTemplate(string handlerName, string queryName, string returnType)
+    {
+        return $@"
+using MediatR;
+
+public class {handlerName} : IRequestHandler<{queryName}, {returnType}>
+{{
+    public async Task<{returnType}> Handle({queryName} request, CancellationToken cancellationToken)
+    {{
+        return new {returnType}();
+    }}
+}}
+";
+    }
+#>
