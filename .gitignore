@@ -6,3 +6,6 @@ riderModule.iml
 /.idea
 /HomeTaskScheduler.UI/node_modules
 /HomeTaskScheduler.UI/api-gen/node_modules
+/HomeTaskScheduler.sln.DotSettings.user
+/HomeTaskScheduler.API/appsettings.Development.json
+/HomeTaskScheduler.API/appsettings.json

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTaskScheduler.Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTaskScheduler.Persistence", "HomeTaskScheduler.Persistence\HomeTaskScheduler.Persistence.csproj", "{CC8E6655-FFE9-40C4-8265-70C3875AEA68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTaskScheduler.Identity", "HomeTaskScheduler.Identity\HomeTaskScheduler.Identity.csproj", "{49DF990D-702E-445B-95B9-518516431EEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{CC8E6655-FFE9-40C4-8265-70C3875AEA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC8E6655-FFE9-40C4-8265-70C3875AEA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC8E6655-FFE9-40C4-8265-70C3875AEA68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49DF990D-702E-445B-95B9-518516431EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49DF990D-702E-445B-95B9-518516431EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49DF990D-702E-445B-95B9-518516431EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49DF990D-702E-445B-95B9-518516431EEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{634B4872-D917-48F5-AA32-E2475E8F4CD1} = {F98FF890-9AFD-4839-86CB-FD5C4C34A85F}
@@ -59,5 +65,6 @@ Global
 		{D737A38E-DB10-4A4B-96DC-4530F0964A04} = {F98FF890-9AFD-4839-86CB-FD5C4C34A85F}
 		{8F32E50E-C471-4466-B583-59A44333C133} = {F98FF890-9AFD-4839-86CB-FD5C4C34A85F}
 		{CC8E6655-FFE9-40C4-8265-70C3875AEA68} = {F98FF890-9AFD-4839-86CB-FD5C4C34A85F}
+		{49DF990D-702E-445B-95B9-518516431EEB} = {F98FF890-9AFD-4839-86CB-FD5C4C34A85F}
 	EndGlobalSection
 EndGlobal
