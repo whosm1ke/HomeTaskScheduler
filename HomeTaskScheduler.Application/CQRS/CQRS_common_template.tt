@@ -3,9 +3,11 @@
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Text" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Reflection" #>
 
 <#
-    string name = "fsdfsdf";
+    string name = "AbstractUser";
     string basePath = Path.Combine(Directory.GetCurrentDirectory(), name);
 
     // Create directories
@@ -16,23 +18,25 @@
 
     // Create files with templates
     CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"Create{name}CommandHandler.cs"),
-        GetCommandHandlerTemplate(name, "Create"));
+        GetCommandHandlerTemplate(name, "Create", Path.Combine(basePath, "Handlers", "Commands")));
     CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"Update{name}CommandHandler.cs"),
-        GetCommandHandlerTemplate(name, "Update"));
+        GetCommandHandlerTemplate(name, "Update", Path.Combine(basePath, "Handlers", "Commands")));
     CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"Delete{name}CommandHandler.cs"),
-        GetCommandHandlerTemplate(name, "Delete"));
+        GetCommandHandlerTemplate(name, "Delete", Path.Combine(basePath, "Handlers", "Commands")));
     CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"Get{name}RequestHandler.cs"),
-        GetQueryHandlerTemplate(name, "Get"));
+        GetQueryHandlerTemplate(name, "Get", Path.Combine(basePath, "Handlers", "Queries")));
     CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"Get{name}sRequestHandler.cs"),
-        GetQueryHandlerTemplate(name, "GetAll"));
+        GetQueryHandlerTemplate(name, "GetAll", Path.Combine(basePath, "Handlers", "Queries")));
     CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Create{name}Command.cs"),
-        GetCommandTemplate(name, "Create"));
+        GetCommandTemplate(name, "Create", Path.Combine(basePath, "Requests", "Commands")));
     CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Update{name}Command.cs"),
-        GetCommandTemplate(name, "Update"));
+        GetCommandTemplate(name, "Update", Path.Combine(basePath, "Requests", "Commands")));
     CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Delete{name}Command.cs"),
-        GetCommandTemplate(name, "Delete"));
-    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}Request.cs"), GetQueryTemplate(name, "Get"));
-    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}sRequest.cs"), GetQueryTemplate(name, "GetAll"));
+        GetCommandTemplate(name, "Delete", Path.Combine(basePath, "Requests", "Commands")));
+    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}Request.cs"), 
+        GetQueryTemplate(name, "Get", Path.Combine(basePath, "Requests", "Queries")));
+    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}sRequest.cs"), 
+        GetQueryTemplate(name, "GetAll", Path.Combine(basePath, "Requests", "Queries")));
 #>
 
 <#+
@@ -41,9 +45,24 @@
         File.WriteAllText(path, content);
     }
 
-    string GetCommandTemplate(string name, string action)
+    string GetNamespace(string path)
     {
+        var parts = path.Split(Path.DirectorySeparatorChar);
+        var projectIndex = Array.IndexOf(parts, "HomeTaskScheduler.Application");
+        if (projectIndex == -1)
+        {
+            throw new InvalidOperationException("Project directory not found in path.");
+        }
+        var namespaceParts = parts.Skip(projectIndex).ToList(); // Skip the project directory itself
+        return string.Join(".", namespaceParts);
+    }
+
+    string GetCommandTemplate(string name, string action, string path)
+    {
+        string namespaceName = GetNamespace(path);
         return $@"using MediatR;
+
+namespace {namespaceName};
 
 public class {action}{name}Command : IRequest<Unit>
 {{
@@ -52,10 +71,12 @@ public class {action}{name}Command : IRequest<Unit>
 ";
     }
 
-    string GetQueryTemplate(string name, string action)
+    string GetQueryTemplate(string name, string action, string path)
     {
+        string namespaceName = GetNamespace(path);
         return $@"using MediatR;
 
+namespace {namespaceName};
 public class {action}{name}Request : IRequest<Unit>
 {{
 
@@ -63,9 +84,13 @@ public class {action}{name}Request : IRequest<Unit>
 ";
     }
 
-    string GetCommandHandlerTemplate(string name, string action)
+    string GetCommandHandlerTemplate(string name, string action, string path)
     {
+        string namespaceName = GetNamespace(path);
         return $@"using MediatR;
+using {namespaceName.Replace(".Handlers.Commands", ".Requests.Commands")};
+
+namespace {namespaceName};
 
 public class {action}{name}CommandHandler : IRequestHandler<{action}{name}Command, Unit>
 {{
@@ -77,10 +102,13 @@ public class {action}{name}CommandHandler : IRequestHandler<{action}{name}Comman
 ";
     }
 
-    string GetQueryHandlerTemplate(string name, string action)
+    string GetQueryHandlerTemplate(string name, string action, string path)
     {
-        return $@"
-using MediatR;
+        string namespaceName = GetNamespace(path);
+        return $@"using MediatR;
+using {namespaceName.Replace(".Handlers.Queries", ".Requests.Queries")};
+
+namespace {namespaceName};
 
 public class {action}{name}RequestHandler : IRequestHandler<{action}{name}Request, Unit>
 {{
