@@ -21,7 +21,7 @@ public class AuditInterceptor : SaveChangesInterceptor
 
         try
         {
-            foreach (var entry in context.ChangeTracker.Entries<ILoggedEntity>())
+            foreach (var entry in context.ChangeTracker.Entries<IAuditableEntity>())
             {
                 var loggedEntity = entry.Entity;
                 switch (entry.State)
