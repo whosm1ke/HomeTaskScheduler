@@ -7,7 +7,7 @@
 <#@ import namespace="System.Reflection" #>
 
 <#
-    string name = "AbstractUser";
+    string name = "User";
     string basePath = Path.Combine(Directory.GetCurrentDirectory(), name);
 
     // Create directories
@@ -33,9 +33,9 @@
         GetCommandTemplate(name, "Update", Path.Combine(basePath, "Requests", "Commands")));
     CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Delete{name}Command.cs"),
         GetCommandTemplate(name, "Delete", Path.Combine(basePath, "Requests", "Commands")));
-    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}Request.cs"), 
+    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}Request.cs"),
         GetQueryTemplate(name, "Get", Path.Combine(basePath, "Requests", "Queries")));
-    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}sRequest.cs"), 
+    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}sRequest.cs"),
         GetQueryTemplate(name, "GetAll", Path.Combine(basePath, "Requests", "Queries")));
 #>
 
