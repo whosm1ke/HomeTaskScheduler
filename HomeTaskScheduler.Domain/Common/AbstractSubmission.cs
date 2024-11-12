@@ -3,7 +3,7 @@ using HomeTaskScheduler.Domain.Enums;
 
 namespace HomeTaskScheduler.Domain.Common;
 
-public abstract class AbstractSubmission : ILoggedEntity
+public abstract class AbstractSubmission : IAuditableEntity
 {
     public AbstractSubmission()
     {

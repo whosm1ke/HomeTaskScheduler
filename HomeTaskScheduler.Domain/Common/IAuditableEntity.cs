@@ -1,6 +1,6 @@
 ﻿namespace HomeTaskScheduler.Domain.Common;
 
-public interface ILoggedEntity : IEntity
+public interface IAuditableEntity : IEntity
 {
     public DateTime CreatedOn { get; set; }
 

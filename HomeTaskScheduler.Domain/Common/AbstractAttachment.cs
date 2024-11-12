@@ -2,7 +2,7 @@
 
 namespace HomeTaskScheduler.Domain.Common;
 
-public abstract class AbstractAttachment : ILoggedEntity
+public abstract class AbstractAttachment : IAuditableEntity
 {
     public AttachmentType AttachmentType { get; }
     public string AttachmentName { get; set; }

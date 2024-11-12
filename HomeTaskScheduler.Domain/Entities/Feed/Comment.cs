@@ -3,7 +3,7 @@ using HomeTaskScheduler.Domain.Enums;
 
 namespace HomeTaskScheduler.Domain.Entities.Feed;
 
-public class Comment : ILoggedEntity
+public class Comment : IAuditableEntity
 {
     public Guid Id { get; set; }
     public DateTime CreatedOn { get; set; }

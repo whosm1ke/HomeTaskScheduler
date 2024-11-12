@@ -3,7 +3,7 @@ using HomeTaskScheduler.Domain.Entities.Tasks;
 
 namespace HomeTaskScheduler.Domain.Entities.Feed;
 
-public class Theme : ILoggedEntity
+public class Theme : IAuditableEntity
 {
     public Theme()
     {

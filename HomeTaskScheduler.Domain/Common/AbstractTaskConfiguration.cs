@@ -5,7 +5,7 @@ using HomeTaskScheduler.Domain.Enums;
 
 namespace HomeTaskScheduler.Domain.Common;
 
-public abstract class AbstractTaskConfiguration : ILoggedEntity
+public abstract class AbstractTaskConfiguration : IAuditableEntity
 {
     public AbstractTaskConfiguration()
     {
