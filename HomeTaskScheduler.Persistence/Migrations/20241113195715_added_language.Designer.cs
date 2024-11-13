@@ -3,6 +3,7 @@ using System;
 using HomeTaskScheduler.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HomeTaskScheduler.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241113195715_added_language")]
+    partial class added_language
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,7 +123,7 @@ namespace HomeTaskScheduler.Persistence.Migrations
 
                     b.HasIndex("TaskConfigurationId");
 
-                    b.ToTable("Attachments", (string)null);
+                    b.ToTable("Attachments");
 
                     b.HasDiscriminator<int>("AttachmentType");
 
@@ -166,7 +169,7 @@ namespace HomeTaskScheduler.Persistence.Migrations
 
                     b.HasIndex("TaskConfigurationId");
 
-                    b.ToTable("Submissions", (string)null);
+                    b.ToTable("Submissions");
 
                     b.HasDiscriminator<int>("SubmissionType");
 
@@ -217,7 +220,7 @@ namespace HomeTaskScheduler.Persistence.Migrations
 
                     b.HasIndex("ThemeId");
 
-                    b.ToTable("TaskConfigurations", (string)null);
+                    b.ToTable("TaskConfigurations");
 
                     b.HasDiscriminator<int>("TaskType");
 
@@ -420,7 +423,7 @@ namespace HomeTaskScheduler.Persistence.Migrations
                     b.Property<long>("AnswerId")
                         .HasColumnType("bigint");
 
-                    b.ToTable("Submissions", null, t =>
+                    b.ToTable("Submissions", t =>
                         {
                             t.Property("AnswerId")
                                 .HasColumnName("TestSubmission_AnswerId");

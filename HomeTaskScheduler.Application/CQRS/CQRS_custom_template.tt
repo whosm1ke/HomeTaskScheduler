@@ -7,28 +7,28 @@
 <#
 
     bool isCommand = true;
-    string REQUEST_NAME = "SendInvite";
-    string HANDLER_NAME = $"{REQUEST_NAME}Handler";
-    string RETURN_TYPE_NAME = "AbstractUser";
-    string FOLDER_NAME = "DTO";
-    string basePath = Path.Combine(Directory.GetCurrentDirectory(), FOLDER_NAME);
+    string requestName = "SendInvite";
+    string handlerName = $"{requestName}Handler";
+    string returnTypeName = "AbstractUser";
+    string folderName = "DTO";
+    string basePath = Path.Combine(Directory.GetCurrentDirectory(), folderName);
 
     Directory.CreateDirectory(Path.Combine(basePath, "Requests", "Commands"));
     Directory.CreateDirectory(Path.Combine(basePath, "Handlers", "Commands"));
 
     if (isCommand)
     {
-        CreateFile(Path.Combine(basePath, "Requests", "Commands", $"{REQUEST_NAME}.cs"),
-            GetCommandTemplate(REQUEST_NAME, RETURN_TYPE_NAME, Path.Combine(basePath, "Requests", "Commands")));
-        CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"{HANDLER_NAME}.cs"),
-            GetCommandHandlerTemplate(HANDLER_NAME, REQUEST_NAME, RETURN_TYPE_NAME, Path.Combine(basePath, "Handlers", "Commands")));
+        CreateFile(Path.Combine(basePath, "Requests", "Commands", $"{requestName}.cs"),
+            GetCommandTemplate(requestName, returnTypeName, Path.Combine(basePath, "Requests", "Commands")));
+        CreateFile(Path.Combine(basePath, "Handlers", "Commands", $"{handlerName}.cs"),
+            GetCommandHandlerTemplate(handlerName, requestName, returnTypeName, Path.Combine(basePath, "Handlers", "Commands")));
     }
     else
     {
-        CreateFile(Path.Combine(basePath, "Requests", "Queries", $"{REQUEST_NAME}.cs"),
-            GetQueryTemplate(REQUEST_NAME, RETURN_TYPE_NAME, Path.Combine(basePath, "Requests", "Queries")));
-        CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"{HANDLER_NAME}.cs"),
-            GetQueryHandlerTemplate(HANDLER_NAME, REQUEST_NAME, RETURN_TYPE_NAME, Path.Combine(basePath, "Handlers", "Queries")));
+        CreateFile(Path.Combine(basePath, "Requests", "Queries", $"{requestName}.cs"),
+            GetQueryTemplate(requestName, returnTypeName, Path.Combine(basePath, "Requests", "Queries")));
+        CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"{handlerName}.cs"),
+            GetQueryHandlerTemplate(handlerName, requestName, returnTypeName, Path.Combine(basePath, "Handlers", "Queries")));
     }
 #>
 

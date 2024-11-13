@@ -6,6 +6,10 @@ namespace HomeTaskScheduler.Domain.Entities.Tasks;
 
 public class QuestionTaskConfiguration : AbstractTaskConfiguration
 {
+    public QuestionTaskConfiguration()
+    {
+        TaskType = TaskType.QuestionTask;
+    }
     public QuestionAnswer? QuestionAnswer { get; set; }
     public string Answer { get; set; }
     public AnswerUnit AnswerUnit { get; set; }

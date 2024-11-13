@@ -4,5 +4,8 @@ public enum SubmissionStatus
 {
     Assigned,
     DoneInTime,
-    DoneWithLate
+    DoneWithLate,
+    Late,
+    ReturnedWithoutMark,
+    ReturnedWithMark,
 }

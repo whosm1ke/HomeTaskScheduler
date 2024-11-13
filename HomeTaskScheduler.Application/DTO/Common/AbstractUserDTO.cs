@@ -2,15 +2,16 @@
 
 namespace HomeTaskScheduler.Application.DTO.Common;
 
-public abstract class AbstractUserDTO
+public abstract class AbstractUserDto : IEntity
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string FullName => $"{FirstName} {LastName}";
     public string AvatarUrl { get; set; }
-    public string PreferedLanguage { get; set; }
+    public Language PreferredLanguage { get; set; }
     public string Username { get; set; }
     public DateTime? LastActivity { get; set; }
     public Guid Id { get; set; }
-    public UserType UserType { get; set; }
+    public UserType UserType { get; protected set; }
 }
+

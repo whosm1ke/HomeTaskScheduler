@@ -26,9 +26,6 @@ public class AbstractUserConfiguration : IEntityTypeConfiguration<AbstractUser>
         builder.Property(u => u.AvatarUrl)
             .HasMaxLength(200);
 
-        builder.Property(u => u.PreferedLanguage)
-            .HasMaxLength(10);
-
         builder.Property(u => u.Username)
             .IsRequired()
             .HasMaxLength(50);

@@ -39,8 +39,6 @@
 
     <ItemGroup>
       <Folder Include="DTO\Attachments\" />
-      <Folder Include="DTO\Submissions\" />
-      <Folder Include="DTO\Tasks\" />
       <Folder Include="MapProfiles\" />
     </ItemGroup>
 

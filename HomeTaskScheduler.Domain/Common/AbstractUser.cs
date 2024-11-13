@@ -8,7 +8,7 @@ public abstract class AbstractUser : IEntity
     public string LastName { get; set; }
     public string FullName => $"{FirstName} {LastName}";
     public string AvatarUrl { get; set; }
-    public string PreferedLanguage { get; set; }
+    public Language PreferredLanguage { get; set; }
     public string Username { get; set; }
     public DateTime? LastActivity { get; set; }
     public Guid Id { get; set; }
