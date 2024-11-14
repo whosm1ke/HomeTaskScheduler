@@ -57,7 +57,6 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>UserResources.resx</DependentUpon>
       </Compile>
-<<<<<<< HEAD
       <Compile Update="Resources\CourseResources.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
@@ -68,8 +67,6 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>CommentResources.resx</DependentUpon>
       </Compile>
-=======
->>>>>>> origin/dev
     </ItemGroup>
 
     <ItemGroup>
@@ -97,7 +94,6 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>UserResources.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-<<<<<<< HEAD
       <EmbeddedResource Update="Resources\CourseResources.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>CourseResources.Designer.cs</LastGenOutput>
@@ -106,8 +102,6 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>CommentResources.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-=======
->>>>>>> origin/dev
       <Compile Update="Resources\AttachmentResources.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
