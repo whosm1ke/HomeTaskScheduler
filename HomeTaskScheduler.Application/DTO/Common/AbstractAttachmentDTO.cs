@@ -2,7 +2,7 @@
 
 namespace HomeTaskScheduler.Application.DTO.Common;
 
-public abstract class AbstractAttachmentDto
+public abstract class AbstractAttachmentDto : IEntity
 {
     public AttachmentType AttachmentType { get; protected set; }
     public string AttachmentName { get; set; }
