@@ -105,6 +105,24 @@ namespace HomeTaskScheduler.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User does not exists by provided Id.
+        /// </summary>
+        internal static string UserDoesNotExists {
+            get {
+                return ResourceManager.GetString("UserDoesNotExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Id is required.
+        /// </summary>
+        internal static string UserIdIsRequired {
+            get {
+                return ResourceManager.GetString("UserIdIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Username is required..
         /// </summary>
         internal static string UserNameIsRequired {

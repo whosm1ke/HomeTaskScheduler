@@ -69,6 +69,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="DTO\Submissions\Validation\" />
+      <Folder Include="DTO\Tasks\Validation\" />
       <Folder Include="MapProfiles\" />
     </ItemGroup>
 

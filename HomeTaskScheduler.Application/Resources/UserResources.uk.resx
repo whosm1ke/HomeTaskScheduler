@@ -32,4 +32,10 @@
     <data name="UserNameLengthLimit50" xml:space="preserve">
         <value>Ім'я користувача не повинно перевищувати 50 символів. Ви ввели {0} символів.</value>
     </data>
+    <data name="UserIdIsRequired" xml:space="preserve">
+        <value>Потрібен ідентифікатор користувача</value>
+    </data>
+    <data name="UserDoesNotExists" xml:space="preserve">
+        <value>Користувач не існує за наданим ідентифікатором</value>
+    </data>
 </root>

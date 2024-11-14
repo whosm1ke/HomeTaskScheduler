@@ -39,4 +39,10 @@
     <data name="UserNameLengthLimit50" xml:space="preserve">
         <value>Username must be less than 50 characters. You entered {0} characters</value>
     </data>
+    <data name="UserIdIsRequired" xml:space="preserve">
+        <value>User Id is required</value>
+    </data>
+    <data name="UserDoesNotExists" xml:space="preserve">
+        <value>User does not exists by provided Id</value>
+    </data>
 </root>
