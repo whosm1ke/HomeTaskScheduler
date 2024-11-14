@@ -1,10 +1,14 @@
-﻿namespace HomeTaskScheduler.Application.DTO.Users;
+﻿using HomeTaskScheduler.Application.DTO.Common;
+using HomeTaskScheduler.Domain.Enums;
 
-public class CreateUserDto
+namespace HomeTaskScheduler.Application.DTO.Users;
+
+public class CreateUserDto : ICommonUserDto
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string AvatarUrl { get; set; }
-    public string PreferedLanguage { get; set; }
+    
+    public Language Language { get; set; }
     public string Username { get; set; }
 }

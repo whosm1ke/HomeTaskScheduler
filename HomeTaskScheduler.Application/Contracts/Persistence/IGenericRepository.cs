@@ -11,6 +11,7 @@ public interface IGenericRepository<T> where T : class, IEntity
     Task<IReadOnlyList<T>> GetAllAsyncNoTracking();
     Task<T> AddAsync(T item);
     Task<bool> ExistsAsync(Guid id);
+    Task<bool> ExistAllAsync(IEnumerable<Guid> ids);
     void Update(T item);
     void UpdateRange(IEnumerable<T> items);
     void Delete(T item);

@@ -1,6 +1,8 @@
-﻿namespace HomeTaskScheduler.Application.DTO.Tasks;
+﻿using HomeTaskScheduler.Application.DTO.Common;
 
-public abstract class CreateTaskConfigurationDto
+namespace HomeTaskScheduler.Application.DTO.Tasks;
+
+public abstract class CreateTaskConfigurationDto : ICommonTaskConfigurationDto
 {
     public string TaskTittle { get; set; }
     public string TaskInstructions { get; set; }

@@ -1,0 +1,23 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="CourceNameIsRequired" xml:space="preserve">
+        <value>Назва курсу обов'язкова.</value>
+    </data>
+    <data name="CourseDescriptionLengthLimit2000" xml:space="preserve">
+        <value>Опис курсу не повинен перевищувати 2000 символів. Ви ввели {0} символів.</value>
+    </data>
+    <data name="CourseNameLengthLimit200" xml:space="preserve">
+        <value>Назва курсу не повинна перевищувати 200 символів. Ви ввели {0} символів.</value>
+    </data>
+</root>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="TaskTitleIsRequired" xml:space="preserve">
+        <value>Task title is required.</value>
+    </data>
+    <data name="TaskTitleNoLongerThan200" xml:space="preserve">
+        <value>Task title must be less than 200 characters. You entered {0} characters.</value>
+    </data>
+    <data name="TaskInstructionsNoLongerThan2000" xml:space="preserve">
+        <value>Task instructions must be less than 2000 characters. You entered {0} characters.</value>
+    </data>
+    <data name="CourseIdsIsRequired" xml:space="preserve">
+        <value>At least one course Id is required</value>
+    </data>
+    <data name="CourseIdsNotNull" xml:space="preserve">
+        <value>Course Id's can not be null</value>
+    </data>
+    <data name="StudentIdsNotNull" xml:space="preserve">
+        <value>Student Id's can not be null</value>
+    </data>
+    <data name="StudentIdsIsRequired" xml:space="preserve">
+        <value>At least one student Id is required</value>
+    </data>
+    <data name="MaxMArkBetween1And100" xml:space="preserve">
+        <value>Max mark must be between 1 and 100.</value>
+    </data>
+    <data name="InvalidTaskType" xml:space="preserve">
+        <value>Invalid Task Type</value>
+    </data>
+</root>

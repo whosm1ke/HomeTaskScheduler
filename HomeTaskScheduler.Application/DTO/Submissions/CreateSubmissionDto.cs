@@ -1,6 +1,11 @@
-﻿namespace HomeTaskScheduler.Application.DTO.Submissions;
+﻿using HomeTaskScheduler.Application.DTO.Common;
 
-public abstract class CreateSubmissionDto : BaseSubmissionDto
+namespace HomeTaskScheduler.Application.DTO.Submissions;
+
+public abstract class CreateSubmissionDto : ICommonSubmissionDto
 {
     public Guid StudentId { get; set; }
+    public ICollection<Guid>? AttachmentIds { get; set; }
+    public uint? Grade { get; set; }
+    public Guid TaskConfigurationId { get; set; }
 }

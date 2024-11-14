@@ -1,6 +1,6 @@
 ﻿namespace HomeTaskScheduler.Application.DTO.Attachments;
 
-public class CreateLinkAttachment : CreateAttachmentDto
+public class CreateLinkAttachmentDto : CreateAttachmentDto
 {
     public string Url { get; set; }
 }
