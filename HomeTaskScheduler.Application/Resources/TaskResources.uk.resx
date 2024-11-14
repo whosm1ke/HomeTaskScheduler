@@ -1,0 +1,41 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="CourseIdsIsRequired" xml:space="preserve">
+        <value>Потрібен принаймні один ідентифікатор курсу</value>
+    </data>
+    <data name="CourseIdsNotNull" xml:space="preserve">
+        <value>Ідентифікатор курсу не може бути нульовим</value>
+    </data>
+    <data name="InvalidTaskType" xml:space="preserve">
+        <value>Неправильний тип завдання</value>
+    </data>
+    <data name="StudentIdsIsRequired" xml:space="preserve">
+        <value>Потрібен принаймні один студентський айді</value>
+    </data>
+    <data name="MaxMArkBetween1And100" xml:space="preserve">
+        <value>Максимальна оцінка має бути від 1 до 100.</value>
+    </data>
+    <data name="StudentIdsNotNull" xml:space="preserve">
+        <value>Ідентифікатори студента не може бути нульовим</value>
+    </data>
+    <data name="TaskInstructionsNoLongerThan2000" xml:space="preserve">
+        <value>Інструкції до завдання не повинні перевищувати 2000 символів. Ви ввели {0} символів.</value>
+    </data>
+    <data name="TaskTitleIsRequired" xml:space="preserve">
+        <value>Назва завдання обов'язкова.</value>
+    </data>
+    <data name="TaskTitleNoLongerThan200" xml:space="preserve">
+        <value>Назва завдання не повинна перевищувати 200 символів. Ви ввели {0} символів.</value>
+    </data>
+</root>

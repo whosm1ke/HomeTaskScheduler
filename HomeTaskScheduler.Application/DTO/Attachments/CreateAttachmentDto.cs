@@ -1,6 +1,8 @@
-﻿namespace HomeTaskScheduler.Application.DTO.Attachments;
+﻿using HomeTaskScheduler.Application.DTO.Common;
 
-public abstract class CreateAttachmentDto 
+namespace HomeTaskScheduler.Application.DTO.Attachments;
+
+public abstract class CreateAttachmentDto : ICommonAttachment
 {
     public string AttachmentName { get; set; }
     public Guid? SubmissionId { get; set; }

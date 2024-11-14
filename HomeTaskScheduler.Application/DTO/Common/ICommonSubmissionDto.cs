@@ -1,6 +1,6 @@
-﻿namespace HomeTaskScheduler.Application.DTO.Submissions;
+﻿namespace HomeTaskScheduler.Application.DTO.Common;
 
-public abstract class BaseSubmissionDto
+public interface ICommonSubmissionDto
 {
     public ICollection<Guid>? AttachmentIds { get; set; }
     public uint? Grade { get; set; }
