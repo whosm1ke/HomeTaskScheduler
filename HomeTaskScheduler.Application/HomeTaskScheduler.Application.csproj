@@ -9,6 +9,7 @@
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="13.0.1" />
       <PackageReference Include="FluentValidation" Version="11.10.0" />
+      <PackageReference Include="FluentValidation" Version="11.10.0" />
       <PackageReference Include="MediatR" Version="12.4.1" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0-rc.2.24473.5" />
     </ItemGroup>
@@ -56,6 +57,7 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>UserResources.resx</DependentUpon>
       </Compile>
+<<<<<<< HEAD
       <Compile Update="Resources\CourseResources.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
@@ -66,6 +68,8 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>CommentResources.resx</DependentUpon>
       </Compile>
+=======
+>>>>>>> origin/dev
     </ItemGroup>
 
     <ItemGroup>
@@ -93,6 +97,7 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>UserResources.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+<<<<<<< HEAD
       <EmbeddedResource Update="Resources\CourseResources.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>CourseResources.Designer.cs</LastGenOutput>
@@ -100,6 +105,104 @@
       <EmbeddedResource Update="Resources\CommentResources.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>CommentResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+=======
+>>>>>>> origin/dev
+      <Compile Update="Resources\AttachmentResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>AttachmentResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\SubmissionResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SubmissionResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\TaskResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TaskResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\UserResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\CourseResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>CourseResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\CommentResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>CommentResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\AttachmentResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>AttachmentResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\SubmissionResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SubmissionResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\TaskResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TaskResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\UserResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserResources.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\AttachmentResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>AttachmentResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\SubmissionResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>SubmissionResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\TaskResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>TaskResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\UserResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\CourseResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>CourseResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\CommentResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>CommentResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\AttachmentResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>AttachmentResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\SubmissionResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>SubmissionResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\TaskResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>TaskResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\UserResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserResources.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
 
