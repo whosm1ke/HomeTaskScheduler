@@ -13,6 +13,7 @@ public abstract class AbstractTaskConfiguration : IAuditableEntity
         Courses = new HashSet<Course>();
         Students = new HashSet<Student>();
         Submissions = new HashSet<AbstractSubmission>();
+        Comments = new HashSet<Comment>();
     }
     public TaskType TaskType { get; protected set; }
     public virtual string TaskTittle { get; set; }
@@ -21,6 +22,7 @@ public abstract class AbstractTaskConfiguration : IAuditableEntity
     public virtual ICollection<Course> Courses { get; set; }
     public virtual ICollection<Student> Students { get; set; }
     public virtual ICollection<AbstractSubmission> Submissions { get; set; }
+    public virtual ICollection<Comment> Comments { get; set; }
     public uint? MaxMark { get; set; }
     public DateTime DueDate { get; set; }
     public virtual Theme Theme { get; set; }

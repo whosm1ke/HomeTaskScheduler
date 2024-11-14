@@ -9,6 +9,8 @@ public class Course : IAuditableEntity
     {
         Teachers = new HashSet<Teacher>();
         Students = new HashSet<Student>();
+        Tasks = new HashSet<AbstractTaskConfiguration>();
+        Comments = new HashSet<Comment>();
     }
     public Guid Id { get; set; }
     public DateTime CreatedOn { get; set; }
@@ -23,6 +25,8 @@ public class Course : IAuditableEntity
     public virtual ICollection<Student> Students { get; set; }
     
     public virtual ICollection<AbstractTaskConfiguration> Tasks { get; set; }
+
+    public virtual ICollection<Comment> Comments { get; set; }
 
     
     

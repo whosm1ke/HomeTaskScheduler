@@ -13,5 +13,13 @@ public class Comment : IAuditableEntity
     public string CommentPayload { get; set; }
     public CommentTargetType CommentTargetType { get; set; }
     public Guid? AbstractTaskId { get; set; }
+
+    public AbstractTaskConfiguration? AbstractTaskConfiguration { get; set; }
     public Guid? CourseId { get; set; }
+    
+    public Course? Course { get; set; }
+
+
+    public AbstractUser AbstractUser { get; set; }
+    public Guid AbstractUserId { get; set; }
 }
