@@ -3,6 +3,7 @@ using System;
 using HomeTaskScheduler.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HomeTaskScheduler.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241114184600_attachemnt_update")]
+    partial class attachemnt_update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -277,9 +280,6 @@ namespace HomeTaskScheduler.Persistence.Migrations
                     b.Property<Guid?>("AbstractTaskId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("AbstractUserId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("CommentPayload")
                         .IsRequired()
                         .HasMaxLength(2000)
@@ -306,8 +306,6 @@ namespace HomeTaskScheduler.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AbstractTaskId");
-
-                    b.HasIndex("AbstractUserId");
 
                     b.HasIndex("CourseId");
 
@@ -671,27 +669,15 @@ namespace HomeTaskScheduler.Persistence.Migrations
 
             modelBuilder.Entity("HomeTaskScheduler.Domain.Entities.Feed.Comment", b =>
                 {
-                    b.HasOne("HomeTaskScheduler.Domain.Common.AbstractTaskConfiguration", "AbstractTaskConfiguration")
-                        .WithMany("Comments")
+                    b.HasOne("HomeTaskScheduler.Domain.Common.AbstractTaskConfiguration", null)
+                        .WithMany()
                         .HasForeignKey("AbstractTaskId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("HomeTaskScheduler.Domain.Common.AbstractUser", "AbstractUser")
-                        .WithMany("Comments")
-                        .HasForeignKey("AbstractUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("HomeTaskScheduler.Domain.Entities.Feed.Course", "Course")
-                        .WithMany("Comments")
+                    b.HasOne("HomeTaskScheduler.Domain.Entities.Feed.Course", null)
+                        .WithMany()
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("AbstractTaskConfiguration");
-
-                    b.Navigation("AbstractUser");
-
-                    b.Navigation("Course");
                 });
 
             modelBuilder.Entity("HomeTaskScheduler.Domain.Common.AbstractSubmission", b =>
@@ -703,19 +689,7 @@ namespace HomeTaskScheduler.Persistence.Migrations
                 {
                     b.Navigation("Attachments");
 
-                    b.Navigation("Comments");
-
                     b.Navigation("Submissions");
-                });
-
-            modelBuilder.Entity("HomeTaskScheduler.Domain.Common.AbstractUser", b =>
-                {
-                    b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("HomeTaskScheduler.Domain.Entities.Feed.Course", b =>
-                {
-                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("HomeTaskScheduler.Domain.Entities.Feed.Theme", b =>

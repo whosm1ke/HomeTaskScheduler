@@ -1,5 +1,4 @@
-﻿using HomeTaskScheduler.Domain.Common;
-using HomeTaskScheduler.Domain.Entities.Feed;
+﻿using HomeTaskScheduler.Domain.Entities.Feed;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -39,13 +38,18 @@ public class CommentConfiguration : IEntityTypeConfiguration<Comment>
         builder.Property(c => c.CourseId)
             .IsRequired(false);
 
-        builder.HasOne<AbstractTaskConfiguration>()
-            .WithMany()
+        builder.HasOne(x => x.AbstractTaskConfiguration)
+            .WithMany(x => x.Comments)
             .HasForeignKey(c => c.AbstractTaskId)
             .OnDelete(DeleteBehavior.Cascade);
+        
+        builder.HasOne(x => x.AbstractUser)
+            .WithMany(u => u.Comments)
+            .HasForeignKey(c => c.AbstractUserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasOne<Course>()
-            .WithMany()
+        builder.HasOne(x => x.Course)
+            .WithMany(x => x.Comments)
             .HasForeignKey(c => c.CourseId)
             .OnDelete(DeleteBehavior.Cascade);
 

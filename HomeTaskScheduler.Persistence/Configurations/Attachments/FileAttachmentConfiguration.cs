@@ -8,5 +8,25 @@ public class FileAttachmentConfiguration : IEntityTypeConfiguration<FileAttachme
 {
     public void Configure(EntityTypeBuilder<FileAttachment> builder)
     {
+        builder.Property(x => x.Width)
+            .IsRequired(false);
+        
+        builder.Property(x => x.Height)
+            .IsRequired(false);
+        
+        builder.Property(x => x.Path)
+            .HasMaxLength(300)
+            .IsRequired();
+        
+        builder.Property(x => x.FileSize)
+            .IsRequired();
+        
+        builder.Property(x => x.ContentType)
+            .HasMaxLength(64)
+            .IsRequired();
+        
+        builder.Property(x => x.Extension)
+            .HasMaxLength(64)
+            .IsRequired();
     }
 }

@@ -8,6 +8,9 @@ public class LinkAttachmentConfiguration : IEntityTypeConfiguration<LinkAttachme
 {
     public void Configure(EntityTypeBuilder<LinkAttachment> builder)
     {
+        builder.Property(x => x.Url)
+            .HasMaxLength(1024)
+            .IsRequired();
     }
     
     
