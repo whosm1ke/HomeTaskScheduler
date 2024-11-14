@@ -18,19 +18,16 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="CourseDescriptionLengthLimit2000" xml:space="preserve">
-        <value>Course description must be less than 2000 characters. You entered {0} characters</value>
+    <data name="ThemeNameIsRequired" xml:space="preserve">
+        <value>Theme name is required</value>
     </data>
-    <data name="CourceNameIsRequired" xml:space="preserve">
-        <value>Course name is required.</value>
+    <data name="ThemeNameLengthLimit200" xml:space="preserve">
+        <value>Theme name must be less than 200 characters. You entered {0} characters</value>
     </data>
-    <data name="CourseNameLengthLimit200" xml:space="preserve">
-        <value>Course name must be less than 200 characters. You entered {0} characters</value>
+    <data name="ThemeIdIsRequired" xml:space="preserve">
+        <value>Theme Id is required</value>
     </data>
-    <data name="CourseIdIsRequired" xml:space="preserve">
-        <value>Course Id is required</value>
-    </data>
-    <data name="CourseDoesNotExists" xml:space="preserve">
-        <value>Course does not exists by provided id</value>
+    <data name="ThemeDoesNotExists" xml:space="preserve">
+        <value>Theme does not exists by provided Id</value>
     </data>
 </root>

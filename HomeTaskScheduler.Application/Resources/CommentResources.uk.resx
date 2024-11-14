@@ -17,4 +17,31 @@
     <data name="CommentIsRequired" xml:space="preserve">
         <value>Коментар обов'язковй</value>
     </data>
+    <data name="InvalidCommentTargetType" xml:space="preserve">
+        <value>Ціль коментаря не є дійсною</value>
+    </data>
+    <data name="CommentTargeTypeIsRequired" xml:space="preserve">
+        <value>Ціль коментаря обов'язкова</value>
+    </data>
+    <data name="NoTaskByTargetId" xml:space="preserve">
+        <value>За наданим цільовим ідентифікатором такого завдання не було.</value>
+    </data>
+    <data name="NoCourseByTargetId" xml:space="preserve">
+        <value>За вказаним цільовим ідентифікатором такого подання не було.</value>
+    </data>
+    <data name="TargetIdIsRequired" xml:space="preserve">
+        <value>Цільовий ідентифікатор обов'язковий</value>
+    </data>
+    <data name="UserIdIsRequired" xml:space="preserve">
+        <value>Потрібен ідентифікатор користувача</value>
+    </data>
+    <data name="UserNotExists" xml:space="preserve">
+        <value>Користувач не існує за наданим ідентифікатором</value>
+    </data>
+    <data name="CommentDoesNotExist" xml:space="preserve">
+        <value>Коментар не існує за вказаним ідентифікатором</value>
+    </data>
+    <data name="CommentIdIsRequired" xml:space="preserve">
+        <value>Ідентифікатор коментаря обов'язковий</value>
+    </data>
 </root>

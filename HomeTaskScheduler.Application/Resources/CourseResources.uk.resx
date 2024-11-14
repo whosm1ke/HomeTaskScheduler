@@ -20,4 +20,10 @@
     <data name="CourseNameLengthLimit200" xml:space="preserve">
         <value>Назва курсу не повинна перевищувати 200 символів. Ви ввели {0} символів.</value>
     </data>
+    <data name="CourseIdIsRequired" xml:space="preserve">
+        <value>Потрібен ідентифікатор курсу</value>
+    </data>
+    <data name="CourseDoesNotExists" xml:space="preserve">
+        <value>Курс не існує за вказаним ідентифікатором</value>
+    </data>
 </root>

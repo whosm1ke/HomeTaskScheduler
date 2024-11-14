@@ -60,6 +60,24 @@ namespace HomeTaskScheduler.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Comment does not exists by provided Id.
+        /// </summary>
+        internal static string CommentDoesNotExist {
+            get {
+                return ResourceManager.GetString("CommentDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment Id is required.
+        /// </summary>
+        internal static string CommentIdIsRequired {
+            get {
+                return ResourceManager.GetString("CommentIdIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comment is required.
         /// </summary>
         internal static string CommentIsRequired {
@@ -74,6 +92,69 @@ namespace HomeTaskScheduler.Application.Resources {
         internal static string CommentPayloadLengthLimit2000 {
             get {
                 return ResourceManager.GetString("CommentPayloadLengthLimit2000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment Target Type is required.
+        /// </summary>
+        internal static string CommentTargeTypeIsRequired {
+            get {
+                return ResourceManager.GetString("CommentTargeTypeIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment Target Type is invalid.
+        /// </summary>
+        internal static string InvalidCommentTargetType {
+            get {
+                return ResourceManager.GetString("InvalidCommentTargetType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was no such course by provided target id.
+        /// </summary>
+        internal static string NoCourseByTargetId {
+            get {
+                return ResourceManager.GetString("NoCourseByTargetId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was no such task by provided target id.
+        /// </summary>
+        internal static string NoTaskByTargetId {
+            get {
+                return ResourceManager.GetString("NoTaskByTargetId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target Id is required.
+        /// </summary>
+        internal static string TargetIdIsRequired {
+            get {
+                return ResourceManager.GetString("TargetIdIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Id is required.
+        /// </summary>
+        internal static string UserIdIsRequired {
+            get {
+                return ResourceManager.GetString("UserIdIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User does not exists by provided Id.
+        /// </summary>
+        internal static string UserNotExists {
+            get {
+                return ResourceManager.GetString("UserNotExists", resourceCulture);
             }
         }
     }

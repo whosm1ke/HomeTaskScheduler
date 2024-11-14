@@ -3,12 +3,11 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>annotations</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="13.0.1" />
-      <PackageReference Include="FluentValidation" Version="11.10.0" />
       <PackageReference Include="FluentValidation" Version="11.10.0" />
       <PackageReference Include="MediatR" Version="12.4.1" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0-rc.2.24473.5" />
@@ -152,6 +151,10 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>UserResources.resx</DependentUpon>
       </Compile>
+      <EmbeddedResource Update="Resources\ThemeResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ThemeResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>

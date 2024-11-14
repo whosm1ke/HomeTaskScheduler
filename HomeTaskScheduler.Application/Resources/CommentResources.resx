@@ -24,4 +24,31 @@
     <data name="CommentIsRequired" xml:space="preserve">
         <value>Comment is required</value>
     </data>
+    <data name="InvalidCommentTargetType" xml:space="preserve">
+        <value>Comment Target Type is invalid</value>
+    </data>
+    <data name="CommentTargeTypeIsRequired" xml:space="preserve">
+        <value>Comment Target Type is required</value>
+    </data>
+    <data name="TargetIdIsRequired" xml:space="preserve">
+        <value>Target Id is required</value>
+    </data>
+    <data name="NoTaskByTargetId" xml:space="preserve">
+        <value>There was no such task by provided target id</value>
+    </data>
+    <data name="NoCourseByTargetId" xml:space="preserve">
+        <value>There was no such course by provided target id</value>
+    </data>
+    <data name="UserIdIsRequired" xml:space="preserve">
+        <value>User Id is required</value>
+    </data>
+    <data name="UserNotExists" xml:space="preserve">
+        <value>User does not exists by provided Id</value>
+    </data>
+    <data name="CommentDoesNotExist" xml:space="preserve">
+        <value>Comment does not exists by provided Id</value>
+    </data>
+    <data name="CommentIdIsRequired" xml:space="preserve">
+        <value>Comment Id is required</value>
+    </data>
 </root>

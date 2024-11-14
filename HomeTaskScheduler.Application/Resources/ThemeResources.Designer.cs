@@ -21,14 +21,14 @@ namespace HomeTaskScheduler.Application.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class CourseResources {
+    internal class ThemeResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal CourseResources() {
+        internal ThemeResources() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace HomeTaskScheduler.Application.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HomeTaskScheduler.Application.Resources.CourseResources", typeof(CourseResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HomeTaskScheduler.Application.Resources.ThemeResources", typeof(ThemeResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,47 +60,38 @@ namespace HomeTaskScheduler.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Course name is required..
+        ///   Looks up a localized string similar to Theme does not exists by provided Id.
         /// </summary>
-        internal static string CourceNameIsRequired {
+        internal static string ThemeDoesNotExists {
             get {
-                return ResourceManager.GetString("CourceNameIsRequired", resourceCulture);
+                return ResourceManager.GetString("ThemeDoesNotExists", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Course description must be less than 2000 characters. You entered {0} characters.
+        ///   Looks up a localized string similar to Theme Id is required.
         /// </summary>
-        internal static string CourseDescriptionLengthLimit2000 {
+        internal static string ThemeIdIsRequired {
             get {
-                return ResourceManager.GetString("CourseDescriptionLengthLimit2000", resourceCulture);
+                return ResourceManager.GetString("ThemeIdIsRequired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Course does not exists by provided id.
+        ///   Looks up a localized string similar to Theme name is required.
         /// </summary>
-        internal static string CourseDoesNotExists {
+        internal static string ThemeNameIsRequired {
             get {
-                return ResourceManager.GetString("CourseDoesNotExists", resourceCulture);
+                return ResourceManager.GetString("ThemeNameIsRequired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Course Id is required.
+        ///   Looks up a localized string similar to Theme name must be less than 200 characters. You entered {0} characters.
         /// </summary>
-        internal static string CourseIdIsRequired {
+        internal static string ThemeNameLengthLimit200 {
             get {
-                return ResourceManager.GetString("CourseIdIsRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Course name must be less than 200 characters. You entered {0} characters.
-        /// </summary>
-        internal static string CourseNameLengthLimit200 {
-            get {
-                return ResourceManager.GetString("CourseNameLengthLimit200", resourceCulture);
+                return ResourceManager.GetString("ThemeNameLengthLimit200", resourceCulture);
             }
         }
     }
