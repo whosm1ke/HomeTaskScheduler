@@ -1,5 +1,4 @@
 ﻿using HomeTaskScheduler.Domain.Common;
-using HomeTaskScheduler.Domain.Entities.Tasks;
 
 namespace HomeTaskScheduler.Domain.Entities.Feed;
 

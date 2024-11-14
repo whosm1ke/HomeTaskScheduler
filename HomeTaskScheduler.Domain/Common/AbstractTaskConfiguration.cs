@@ -1,4 +1,3 @@
-using HomeTaskScheduler.Domain.Entities;
 using HomeTaskScheduler.Domain.Entities.Feed;
 using HomeTaskScheduler.Domain.Entities.Users;
 using HomeTaskScheduler.Domain.Enums;
