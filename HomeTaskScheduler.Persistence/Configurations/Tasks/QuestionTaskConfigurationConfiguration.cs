@@ -11,7 +11,7 @@ public class QuestionTaskConfigurationConfiguration : IEntityTypeConfiguration<Q
     {
         builder.Property(q => q.QuestionAnswer).HasJsonConversion();
 
-        builder.Property(q => q.Answer)
+        builder.Property(q => q.Question)
             .HasMaxLength(1000);
     }
 }

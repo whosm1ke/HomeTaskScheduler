@@ -45,4 +45,25 @@
     <data name="InvalidTaskType" xml:space="preserve">
         <value>Invalid Task Type</value>
     </data>
+    <data name="AnswerUnitIsRequired" xml:space="preserve">
+        <value>Answer Unit is required</value>
+    </data>
+    <data name="InvalidAnswerUnit" xml:space="preserve">
+        <value>Invalid Answer Unit</value>
+    </data>
+    <data name="QuestinAnswerIsRequired" xml:space="preserve">
+        <value>Provide at least one question and answer</value>
+    </data>
+    <data name="QuestionIsRequired" xml:space="preserve">
+        <value>Provide a question please</value>
+    </data>
+    <data name="QuestionLengthLimit200" xml:space="preserve">
+        <value>Question must be less than 200 characters. You entered {0} characters.</value>
+    </data>
+    <data name="TaskIdIsRequired" xml:space="preserve">
+        <value>Task Configuration Id is required</value>
+    </data>
+    <data name="TaskDoesNotExists" xml:space="preserve">
+        <value>Task does not exists by provided Id</value>
+    </data>
 </root>

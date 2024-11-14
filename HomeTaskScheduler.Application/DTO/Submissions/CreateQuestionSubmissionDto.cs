@@ -6,7 +6,7 @@ public class CreateQuestionSubmissionDto : CreateSubmissionDto
 {
     internal SubmissionType SubmissionType => SubmissionType.QuestionSubmission;
     
-    public string Answer { get; set; }
+    public string? Answer { get; set; }
 
-    public uint AnswerId { get; set; }
+    public uint? AnswerId { get; set; }
 }

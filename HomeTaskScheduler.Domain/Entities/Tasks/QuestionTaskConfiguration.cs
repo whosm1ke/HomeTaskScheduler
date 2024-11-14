@@ -11,6 +11,6 @@ public class QuestionTaskConfiguration : AbstractTaskConfiguration
         TaskType = TaskType.QuestionTask;
     }
     public QuestionAnswer? QuestionAnswer { get; set; }
-    public string Answer { get; set; }
+    public string Question { get; set; }
     public AnswerUnit AnswerUnit { get; set; }
 }

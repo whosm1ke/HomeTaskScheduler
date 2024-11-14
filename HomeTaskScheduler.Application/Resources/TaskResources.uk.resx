@@ -38,4 +38,25 @@
     <data name="TaskTitleNoLongerThan200" xml:space="preserve">
         <value>Назва завдання не повинна перевищувати 200 символів. Ви ввели {0} символів.</value>
     </data>
+    <data name="InvalidAnswerUnit" xml:space="preserve">
+        <value>Неправильна одиниця відповіді</value>
+    </data>
+    <data name="AnswerUnitIsRequired" xml:space="preserve">
+        <value>Потрібна одиниця відповідей</value>
+    </data>
+    <data name="QuestinAnswerIsRequired" xml:space="preserve">
+        <value>Надайте принаймні одне запитання та відповідь</value>
+    </data>
+    <data name="QuestionIsRequired" xml:space="preserve">
+        <value>Поставте запитання, будь ласка</value>
+    </data>
+    <data name="QuestionLengthLimit200" xml:space="preserve">
+        <value>Питання не повинно перевищувати 200 символів. Ви ввели {0} символів.</value>
+    </data>
+    <data name="TaskIdIsRequired" xml:space="preserve">
+        <value>Потрібен ідентифікатор конфігурації завдання</value>
+    </data>
+    <data name="TaskDoesNotExists" xml:space="preserve">
+        <value>Завдання не існує за вказаним ідентифікатором</value>
+    </data>
 </root>

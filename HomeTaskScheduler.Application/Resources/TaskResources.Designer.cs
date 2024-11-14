@@ -60,6 +60,15 @@ namespace HomeTaskScheduler.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Answer Unit is required.
+        /// </summary>
+        internal static string AnswerUnitIsRequired {
+            get {
+                return ResourceManager.GetString("AnswerUnitIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At least one course Id is required.
         /// </summary>
         internal static string CourseIdsIsRequired {
@@ -74,6 +83,15 @@ namespace HomeTaskScheduler.Application.Resources {
         internal static string CourseIdsNotNull {
             get {
                 return ResourceManager.GetString("CourseIdsNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Answer Unit.
+        /// </summary>
+        internal static string InvalidAnswerUnit {
+            get {
+                return ResourceManager.GetString("InvalidAnswerUnit", resourceCulture);
             }
         }
         
@@ -96,6 +114,33 @@ namespace HomeTaskScheduler.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Provide at least one question and answer.
+        /// </summary>
+        internal static string QuestinAnswerIsRequired {
+            get {
+                return ResourceManager.GetString("QuestinAnswerIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provide a question please.
+        /// </summary>
+        internal static string QuestionIsRequired {
+            get {
+                return ResourceManager.GetString("QuestionIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question must be less than 200 characters. You entered {0} characters..
+        /// </summary>
+        internal static string QuestionLengthLimit200 {
+            get {
+                return ResourceManager.GetString("QuestionLengthLimit200", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At least one student Id is required.
         /// </summary>
         internal static string StudentIdsIsRequired {
@@ -110,6 +155,24 @@ namespace HomeTaskScheduler.Application.Resources {
         internal static string StudentIdsNotNull {
             get {
                 return ResourceManager.GetString("StudentIdsNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task does not exists by provided Id.
+        /// </summary>
+        internal static string TaskDoesNotExists {
+            get {
+                return ResourceManager.GetString("TaskDoesNotExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task Configuration Id is required.
+        /// </summary>
+        internal static string TaskIdIsRequired {
+            get {
+                return ResourceManager.GetString("TaskIdIsRequired", resourceCulture);
             }
         }
         

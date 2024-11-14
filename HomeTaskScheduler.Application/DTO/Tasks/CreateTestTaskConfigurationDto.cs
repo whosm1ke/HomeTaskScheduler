@@ -4,5 +4,5 @@ namespace HomeTaskScheduler.Application.DTO.Tasks;
 
 public class CreateTestTaskConfigurationDto : CreateTaskConfigurationDto
 {
-    public virtual ICollection<QuestionAnswer> QuestionsAnswers { get; set; }
+    public ICollection<QuestionAnswer> QuestionsAnswers { get; set; }
 }
