@@ -4,5 +4,5 @@ namespace HomeTaskScheduler.Application.Contracts.Persistence;
 
 public interface IThemeRepository : IGenericRepository<Theme>
 {
-    public Theme GetThemeByIdAsync(Guid id);
+    public Task<Theme?> GetThemeByIdAsync(Guid id);
 }

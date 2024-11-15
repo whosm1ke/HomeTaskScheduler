@@ -5,7 +5,7 @@ namespace HomeTaskScheduler.Application.Contracts.Persistence;
 
 public interface ISubmissionRepository : IGenericRepository<AbstractSubmission>
 {
-    public QuestionSubmission GetQuestionSubmissionByIdAsync(Guid id);
-    public SimpleSubmission GetSimpleSubmissionByIdAsync(Guid id);
-    public TestSubmission GetTestSubmissionByIdAsync(Guid id);
+    public Task<QuestionSubmission?> GetQuestionSubmissionByIdAsync(Guid id);
+    public Task<SimpleSubmission?> GetSimpleSubmissionByIdAsync(Guid id);
+    public Task<TestSubmission?> GetTestSubmissionByIdAsync(Guid id);
 }

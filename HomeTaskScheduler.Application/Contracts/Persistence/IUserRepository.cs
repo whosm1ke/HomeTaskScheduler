@@ -5,6 +5,6 @@ namespace HomeTaskScheduler.Application.Contracts.Persistence;
 
 public interface IUserRepository : IGenericRepository<AbstractUser>
 {
-    public Student GetStudentByIdAsync(Guid id);
-    public Teacher GetTeacherByIdAsync(Guid id);
+    public Task<Student?> GetStudentByIdAsync(Guid id);
+    public Task<Teacher?> GetTeacherByIdAsync(Guid id);
 }

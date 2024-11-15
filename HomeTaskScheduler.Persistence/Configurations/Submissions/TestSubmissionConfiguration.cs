@@ -1,4 +1,5 @@
 ﻿using HomeTaskScheduler.Domain.Entities.Submissions;
+using HomeTaskScheduler.Persistence.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,7 +9,8 @@ public class TestSubmissionConfiguration : IEntityTypeConfiguration<TestSubmissi
 {
     public void Configure(EntityTypeBuilder<TestSubmission> builder)
     {
-        builder.Property(t => t.AnswerId)
-            .IsRequired();
+        builder.Property(t => t.AnswerIds)
+            .IsRequired()
+            .HasJsonConversion();
     }
 }

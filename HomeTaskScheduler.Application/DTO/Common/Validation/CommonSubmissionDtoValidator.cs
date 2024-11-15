@@ -4,9 +4,9 @@ using HomeTaskScheduler.Application.Resources;
 
 namespace HomeTaskScheduler.Application.DTO.Common.Validation;
 
-public class BaseSubmissionDtoValidator : AbstractValidator<ICommonSubmissionDto>
+public class CommonSubmissionDtoValidator : AbstractValidator<ICommonSubmissionDto>
 {
-    public BaseSubmissionDtoValidator()
+    public CommonSubmissionDtoValidator()
     {
         RuleFor(x => x.Grade)
             .InclusiveBetween((uint)1, (uint)100)

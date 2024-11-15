@@ -26,4 +26,25 @@
     <data name="StudentIDIsRequired" xml:space="preserve">
         <value>Студентський айді обов'язковий.</value>
     </data>
+    <data name="StudentDoestNotFound" xml:space="preserve">
+        <value>Студент не існує за вказаним ідентифікатором</value>
+    </data>
+    <data name="TaskNotFound" xml:space="preserve">
+        <value>Завдання не знайдено за вказаним ідентифікатором</value>
+    </data>
+    <data name="AnswerCanNotBeEmpty" xml:space="preserve">
+        <value>Надайте відповідь, будь ласка</value>
+    </data>
+    <data name="InvalidAnswerIndex" xml:space="preserve">
+        <value>Неправильний індекс відповіді. Питання : {0}</value>
+    </data>
+    <data name="InvalidQuestionIndex" xml:space="preserve">
+        <value>Неправильний індекс питання. Довжина питання: {0}, поганий індекс: {0}</value>
+    </data>
+    <data name="SubmissionIdIsRequired" xml:space="preserve">
+        <value>Потрібен ідентифікатор подання</value>
+    </data>
+    <data name="SubmissionNotFound" xml:space="preserve">
+        <value>Подання не існує за вказаним ідентифікатором</value>
+    </data>
 </root>

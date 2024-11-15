@@ -33,4 +33,25 @@
     <data name="StudentIDIsRequired" xml:space="preserve">
         <value>Student Id is required.</value>
     </data>
+    <data name="StudentDoestNotFound" xml:space="preserve">
+        <value>Student does not exists by provided Id</value>
+    </data>
+    <data name="TaskNotFound" xml:space="preserve">
+        <value>Task was not found bt provided id</value>
+    </data>
+    <data name="AnswerCanNotBeEmpty" xml:space="preserve">
+        <value>Provide answer please</value>
+    </data>
+    <data name="InvalidAnswerIndex" xml:space="preserve">
+        <value>Invalid index of answer. Question : {0}</value>
+    </data>
+    <data name="InvalidQuestionIndex" xml:space="preserve">
+        <value>Invalid index of question. Questions length: {0}, bad index: {0}</value>
+    </data>
+    <data name="SubmissionIdIsRequired" xml:space="preserve">
+        <value>Submission Id is required</value>
+    </data>
+    <data name="SubmissionNotFound" xml:space="preserve">
+        <value>Submission does not exists by provided Id</value>
+    </data>
 </root>

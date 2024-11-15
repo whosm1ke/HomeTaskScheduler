@@ -4,5 +4,5 @@ namespace HomeTaskScheduler.Application.Contracts.Persistence;
 
 public interface ICommentRepository : IGenericRepository<Comment>
 {
-    public Comment GetCommentByIdAsync(Guid id);
+    public Task<Comment?> GetCommentByIdAsync(Guid id);
 }

@@ -8,7 +8,7 @@ public class AbstractSubmissionDtoValidator : AbstractValidator<AbstractSubmissi
 {
     public AbstractSubmissionDtoValidator()
     {
-        Include(new BaseSubmissionDtoValidator());
+        Include(new CommonSubmissionDtoValidator());
 
         RuleFor(x => x.SubmissionStatus)
             .IsInEnum().WithMessage(SubmissionResources.InvalidSubmissionStatus);

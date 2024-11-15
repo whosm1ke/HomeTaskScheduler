@@ -499,14 +499,10 @@ namespace HomeTaskScheduler.Persistence.Migrations
                 {
                     b.HasBaseType("HomeTaskScheduler.Domain.Common.AbstractSubmission");
 
-                    b.Property<long>("AnswerId")
-                        .HasColumnType("bigint");
-
-                    b.ToTable("Submissions", t =>
-                        {
-                            t.Property("AnswerId")
-                                .HasColumnName("TestSubmission_AnswerId");
-                        });
+                    b.Property<string>("AnswerIds")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("AnswerIds");
 
                     b.HasDiscriminator().HasValue(1);
                 });

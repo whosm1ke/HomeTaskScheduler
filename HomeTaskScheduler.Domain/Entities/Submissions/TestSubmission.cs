@@ -9,5 +9,5 @@ public class TestSubmission : AbstractSubmission
     {
         SubmissionType = SubmissionType.TestSubmission;
     }
-    public uint AnswerId { get; set; }
+    public ICollection<uint> AnswerIds { get; set; }
 }

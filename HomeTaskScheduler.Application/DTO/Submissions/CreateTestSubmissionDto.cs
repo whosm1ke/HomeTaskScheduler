@@ -6,5 +6,5 @@ public class CreateTestSubmissionDto : CreateSubmissionDto
 {
     internal SubmissionType SubmissionType => SubmissionType.TestSubmission;
     
-    public uint AnswerId { get; set; }
+    public ICollection<uint> AnswerIds { get; set; }
 }

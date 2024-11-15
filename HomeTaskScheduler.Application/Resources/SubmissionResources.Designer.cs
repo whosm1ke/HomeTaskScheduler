@@ -60,11 +60,38 @@ namespace HomeTaskScheduler.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Provide answer please.
+        /// </summary>
+        internal static string AnswerCanNotBeEmpty {
+            get {
+                return ResourceManager.GetString("AnswerCanNotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grade must be between 1 and 100..
         /// </summary>
         internal static string GradeBetween1And100 {
             get {
                 return ResourceManager.GetString("GradeBetween1And100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid index of answer. Question : {0}.
+        /// </summary>
+        internal static string InvalidAnswerIndex {
+            get {
+                return ResourceManager.GetString("InvalidAnswerIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid index of question. Questions length: {0}, bad index: {0}.
+        /// </summary>
+        internal static string InvalidQuestionIndex {
+            get {
+                return ResourceManager.GetString("InvalidQuestionIndex", resourceCulture);
             }
         }
         
@@ -87,6 +114,15 @@ namespace HomeTaskScheduler.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Student does not exists by provided Id.
+        /// </summary>
+        internal static string StudentDoestNotFound {
+            get {
+                return ResourceManager.GetString("StudentDoestNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student Id is required..
         /// </summary>
         internal static string StudentIDIsRequired {
@@ -96,11 +132,38 @@ namespace HomeTaskScheduler.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Submission Id is required.
+        /// </summary>
+        internal static string SubmissionIdIsRequired {
+            get {
+                return ResourceManager.GetString("SubmissionIdIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submission does not exists by provided Id.
+        /// </summary>
+        internal static string SubmissionNotFound {
+            get {
+                return ResourceManager.GetString("SubmissionNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid Task Configuration ID..
         /// </summary>
         internal static string TaskIdIsRequired {
             get {
                 return ResourceManager.GetString("TaskIdIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task was not found bt provided id.
+        /// </summary>
+        internal static string TaskNotFound {
+            get {
+                return ResourceManager.GetString("TaskNotFound", resourceCulture);
             }
         }
     }

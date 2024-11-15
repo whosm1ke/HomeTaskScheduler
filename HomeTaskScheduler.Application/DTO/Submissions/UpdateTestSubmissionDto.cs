@@ -3,5 +3,5 @@
 public class UpdateTestSubmissionDto : UpdateSubmissionDto
 {
     
-    public uint AnswerId { get; set; }
+    public ICollection<uint> AnswerIds { get; set; }
 }
