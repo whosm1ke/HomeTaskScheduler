@@ -14,7 +14,6 @@ public static class ConfigurePersistence
         {
             options.UseNpgsql(configuration.GetConnectionString("LocalDbConnectionString"))
                 .LogTo(Console.WriteLine, LogLevel.Information);
-            ;
         });
         return services;
     }
