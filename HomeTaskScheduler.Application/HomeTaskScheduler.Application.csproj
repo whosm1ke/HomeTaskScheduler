@@ -69,10 +69,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="MapProfiles\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\HomeTaskScheduler.Domain\HomeTaskScheduler.Domain.csproj" />
     </ItemGroup>
 

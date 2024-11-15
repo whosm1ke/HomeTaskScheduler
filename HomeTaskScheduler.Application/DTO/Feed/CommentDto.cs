@@ -10,5 +10,5 @@ public class CommentDto : IEntity
     public CommentTargetType CommentTargetType { get; set; }
     public Guid? AbstractTaskId { get; set; }
     public Guid? CourseId { get; set; }
-    public Guid UserId { get; set; }
+    public Guid AbstractUserId { get; set; }
 }

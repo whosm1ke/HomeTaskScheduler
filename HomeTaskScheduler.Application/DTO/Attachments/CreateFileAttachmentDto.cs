@@ -1,6 +1,12 @@
-﻿namespace HomeTaskScheduler.Application.DTO.Attachments;
+﻿using HomeTaskScheduler.Application.DTO.Common;
 
-public class CreateFileAttachmentDto : CreateAttachmentDto
+namespace HomeTaskScheduler.Application.DTO.Attachments;
+
+public class CreateFileAttachmentDto : CreateAttachmentDto,ICreateDownloadableAttachmentDto
 {
     public Stream FileStream { get; set; }
+    public int? Width { get; set; }
+    public int? Height { get; set; }
+    public string ContentType { get; set; }
+    public string Extension { get; set; }
 }

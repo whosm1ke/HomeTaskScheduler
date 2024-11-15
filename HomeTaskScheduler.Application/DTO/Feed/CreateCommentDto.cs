@@ -11,5 +11,5 @@ public class CreateCommentDto : ICommonCommentDto
     /// TargetId -> TaskConfigurationId or CourseId, depends on CommentTargetType
     /// </summary>
     public Guid TargetId { get; set; }
-    public Guid UserId { get; set; }
+    public Guid AbstractUserId { get; set; }
 }

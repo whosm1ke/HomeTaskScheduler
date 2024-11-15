@@ -40,7 +40,7 @@ public class CreateCommentDtoValidator : AbstractValidator<CreateCommentDto>
                 }
             });
 
-        RuleFor(x => x.UserId)
+        RuleFor(x => x.AbstractUserId)
             .NotNull()
             .WithMessage(CommentResources.UserIdIsRequired)
             .NotEmpty()

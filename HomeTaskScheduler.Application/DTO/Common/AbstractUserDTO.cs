@@ -13,5 +13,6 @@ public abstract class AbstractUserDto : IEntity
     public DateTime? LastActivity { get; set; }
     public Guid Id { get; set; }
     public UserType UserType { get; protected set; }
+    public ICollection<Guid> Comments { get; set; }
 }
 
