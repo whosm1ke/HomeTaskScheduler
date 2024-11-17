@@ -1,4 +1,6 @@
-﻿namespace HomeTaskScheduler.Application.DTO.Tasks;
+﻿using HomeTaskScheduler.Domain.Enums;
+
+namespace HomeTaskScheduler.Application.DTO.Tasks;
 
 public class TaskConfigurationListDto
 {
@@ -6,4 +8,5 @@ public class TaskConfigurationListDto
     public string TaskTittle { get; set; }
     public string TaskInstructions { get; set; }
     public DateTime DueDate { get; set; }
+    public TaskType TaskType { get; protected set; }
 }

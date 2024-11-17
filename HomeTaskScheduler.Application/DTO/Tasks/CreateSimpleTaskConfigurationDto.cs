@@ -1,6 +1,3 @@
 ﻿namespace HomeTaskScheduler.Application.DTO.Tasks;
 
-public class CreateSimpleTaskConfigurationDto : CreateTaskConfigurationDto
-{
-    
-}
+public class CreateSimpleTaskConfigurationDto : CreateTaskConfigurationDto;

@@ -5,7 +5,7 @@
 <#@ import namespace="System.Linq" #>
 
 <#
-    string name = "User";
+    string name = "test";
     string basePath = Path.Combine(Directory.GetCurrentDirectory(), name);
 
     // Create directories
@@ -23,7 +23,7 @@
         GetCommandHandlerTemplate(name, "Delete", Path.Combine(basePath, "Handlers", "Commands")));
     CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"Get{name}RequestHandler.cs"),
         GetQueryHandlerTemplate(name, "Get", Path.Combine(basePath, "Handlers", "Queries")));
-    CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"Get{name}sRequestHandler.cs"),
+    CreateFile(Path.Combine(basePath, "Handlers", "Queries", $"GetAll{name}sRequestHandler.cs"),
         GetQueryHandlerTemplate(name, "GetAll", Path.Combine(basePath, "Handlers", "Queries")));
     CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Create{name}Command.cs"),
         GetCommandTemplate(name, "Create", Path.Combine(basePath, "Requests", "Commands")));
@@ -32,8 +32,8 @@
     CreateFile(Path.Combine(basePath, "Requests", "Commands", $"Delete{name}Command.cs"),
         GetCommandTemplate(name, "Delete", Path.Combine(basePath, "Requests", "Commands")));
     CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}Request.cs"),
-        GetQueryTemplate(name, "Get", Path.Combine(basePath, "Requests", "Queries")));
-    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"Get{name}sRequest.cs"),
+        GetQueryTemplate(name, "Get", Path.Combine(basePath, "Requests", "Queries"), true));
+    CreateFile(Path.Combine(basePath, "Requests", "Queries", $"GetAll{name}sRequest.cs"),
         GetQueryTemplate(name, "GetAll", Path.Combine(basePath, "Requests", "Queries")));
 #>
 
@@ -62,23 +62,24 @@
 
 namespace {namespaceName};
 
-public class {action}{name}Command : IRequest<Unit>
+public class {action}{name}Command : UserRequest, IRequest<Unit>
 {{
-
+    {(action.Contains("Delete") ? "public Guid Id { get; set; }" : string.Empty)}
 }}
 ";
     }
 
-    string GetQueryTemplate(string name, string action, string path)
+    string GetQueryTemplate(string name, string action, string path, bool isGetById = false)
     {
         string namespaceName = GetNamespace(path);
         return $@"using MediatR;
 
 namespace {namespaceName};
-public class {action}{name}Request : IRequest<Unit>
-{{
 
-}}
+    public class {action}{name}Request : UserRequest, IRequest<Unit>
+    {{
+        {(isGetById ? "public Guid Id { get; set; }" : string.Empty)}
+    }}
 ";
     }
 

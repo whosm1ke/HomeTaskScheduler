@@ -1,8 +1,9 @@
+using HomeTaskScheduler.Application.DTO.Users;
 using MediatR;
 
 namespace HomeTaskScheduler.Application.CQRS.Teacher.Requests.Commands;
 
-public class UpdateTeacherCommand : IRequest<Unit>
+public class UpdateTeacherCommand : UserRequest, IRequest<Unit>
 {
-
+    public UpdateUserDto Teacher { get; set; }
 }

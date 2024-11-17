@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using HomeTaskScheduler.Application.DTO.Tasks;
 using HomeTaskScheduler.Application.Resources;
 
 namespace HomeTaskScheduler.Application.DTO.Common.Validation;

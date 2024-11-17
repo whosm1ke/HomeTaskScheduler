@@ -400,6 +400,10 @@ namespace HomeTaskScheduler.Persistence.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("character varying(300)");
 
+                    b.Property<string>("ThumbnailPath")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int?>("Width")
                         .HasColumnType("integer");
 
@@ -427,8 +431,8 @@ namespace HomeTaskScheduler.Persistence.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("character varying(64)");
 
-                    b.Property<long?>("DurationInSeconds")
-                        .HasColumnType("bigint");
+                    b.Property<double?>("DurationInSeconds")
+                        .HasColumnType("double precision");
 
                     b.Property<string>("Extension")
                         .IsRequired()
@@ -445,6 +449,10 @@ namespace HomeTaskScheduler.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("character varying(300)");
+
+                    b.Property<string>("ThumbnailPath")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int?>("Width")
                         .HasColumnType("integer");
@@ -465,6 +473,9 @@ namespace HomeTaskScheduler.Persistence.Migrations
 
                             t.Property("Path")
                                 .HasColumnName("VideoAttachment_Path");
+
+                            t.Property("ThumbnailPath")
+                                .HasColumnName("VideoAttachment_ThumbnailPath");
 
                             t.Property("Width")
                                 .HasColumnName("VideoAttachment_Width");

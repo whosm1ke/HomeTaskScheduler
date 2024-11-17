@@ -8,4 +8,6 @@ public interface IDownloadableAttachment
     long FileSize { get; set; }
     string ContentType { get; set; }
     string Extension { get; set; }
+
+    public string ThumbnailPath { get; set; }
 }

@@ -2,7 +2,7 @@ using MediatR;
 
 namespace HomeTaskScheduler.Application.CQRS.Student.Requests.Commands;
 
-public class DeleteStudentCommand : IRequest<Unit>
+public class DeleteStudentCommand : UserRequest, IRequest<Unit>
 {
-
+    public Guid Id { get; set; }
 }

@@ -10,5 +10,5 @@ public class FileAttachmentDto : AbstractAttachmentDto, IDownloadableAttachmentD
     public long FileSize { get; set; }
     public string ContentType { get; set; }
     public string Extension { get; set; }
-    public byte[] ThumbnailBytes { get; set; }
+    public string ThumbnailPath { get; set; }
 }

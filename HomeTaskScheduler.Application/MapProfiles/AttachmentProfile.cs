@@ -14,9 +14,15 @@ public class AttachmentProfile : Profile
         CreateMap<FileAttachment, FileAttachmentDto>().ReverseMap();
         CreateMap<LinkAttachment, LinkAttachmentDto>().ReverseMap();
         CreateMap<VideoAttachment, VideoAttachmentDto>().ReverseMap();
+        
+        CreateMap<FileAttachment, AttachmentListDto>().ReverseMap();
+        CreateMap<LinkAttachment, AttachmentListDto>().ReverseMap();
+        CreateMap<VideoAttachment, AttachmentListDto>().ReverseMap();
+        
         CreateMap<CreateFileAttachmentDto, FileAttachment>();
         CreateMap<CreateLinkAttachmentDto, LinkAttachment>();
         CreateMap<CreateVideoAttachmentDto, VideoAttachment>();
+        
     }
     
     public override string ProfileName

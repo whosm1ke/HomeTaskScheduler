@@ -8,10 +8,5 @@ public class CreateVideoAttachmentDtoDtoValidator : AbstractValidator<CreateVide
     public CreateVideoAttachmentDtoDtoValidator()
     {
         Include(new CreateAttachmentDtoDtoValidator());
-
-        RuleFor(x => x.DurationInSeconds)
-            .LessThanOrEqualTo((long)TimeSpan.FromHours(2).TotalSeconds)
-            .When(x => x.DurationInSeconds.HasValue)
-            .WithMessage(AttachmentResources.VideoNoLongerThan2Hours);
     }
 }

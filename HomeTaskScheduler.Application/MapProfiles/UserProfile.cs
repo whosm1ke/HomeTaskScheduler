@@ -31,6 +31,7 @@ public class UserProfile : Profile
         
         CreateMap<AbstractUser, CreateUserDto>().ReverseMap();
         CreateMap<AbstractUser, UpdateUserDto>().ReverseMap();
+        CreateMap<AbstractUser, UserListDto>().ReverseMap();
     }
     
     public override string ProfileName

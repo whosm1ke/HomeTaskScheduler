@@ -38,6 +38,8 @@ public class TaskConfigurationProfile : Profile
             .ForMember(dest => dest.Attachments, opt => opt.Ignore())
             .ForMember(dest => dest.Courses, opt => opt.Ignore())
             .ForMember(dest => dest.Students, opt => opt.Ignore());
+
+        CreateMap<AbstractTaskConfiguration, TaskConfigurationListDto>().ReverseMap();
         
         CreateMap<QuestionTaskConfiguration, QuestionTaskConfigurationDto>().ReverseMap();
         CreateMap<QuestionTaskConfiguration, CreateQuestionTaskConfigurationDto>().ReverseMap();

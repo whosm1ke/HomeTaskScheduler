@@ -1,5 +1,3 @@
 ﻿namespace HomeTaskScheduler.Application.DTO.Feed;
 
-public class CourseListDto : UpdateCourseDto
-{
-}
+public class CourseListDto : UpdateCourseDto;
