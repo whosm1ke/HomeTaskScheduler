@@ -3,4 +3,6 @@
 public class CreateThemeDto
 {
     public string ThemeName { get; set; }
+
+    public Guid CourseId { get; set; }
 }

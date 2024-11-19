@@ -5,15 +5,19 @@ using HomeTaskScheduler.Persistence.Configurations.Feed;
 using HomeTaskScheduler.Persistence.Configurations.Submissions;
 using HomeTaskScheduler.Persistence.Configurations.Tasks;
 using HomeTaskScheduler.Persistence.Configurations.Users;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace HomeTaskScheduler.Persistence;
 
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(
+    private readonly IHttpContextAccessor httpContextAccessor;
+
+    public AppDbContext(DbContextOptions<AppDbContext> options, IHttpContextAccessor httpContextAccessor) : base(
         options)
     {
+        this.httpContextAccessor = httpContextAccessor;
     }
 
     public DbSet<AbstractUser> Users { get; set; }
@@ -49,6 +53,6 @@ public class AppDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
-        optionsBuilder.AddInterceptors(new AuditInterceptor(Guid.NewGuid()));
+        optionsBuilder.AddInterceptors(new AuditInterceptor(httpContextAccessor));
     }
 }

@@ -19,7 +19,7 @@ public class
     }
     public async Task<IReadOnlyList<AbstractSubmissionDto>> Handle(GetAllSubmissionsRequest request, CancellationToken cancellationToken)
     {
-        var submissions = await unitOfWork.SubmissionRepository.GetAllAsync(request.CourseId);
+        var submissions = await unitOfWork.SubmissionRepository.GetAllAsync(request.TaskId);
 
         return mapper.Map<List<AbstractSubmissionDto>>(submissions);
     }

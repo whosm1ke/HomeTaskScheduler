@@ -16,5 +16,8 @@ public class Theme : IAuditableEntity
 
     public virtual string ThemeName { get; set; }
 
+    public virtual Course Course { get; set; }
+    public Guid CourseId { get; set; }
+
     public virtual ICollection<AbstractTaskConfiguration> Tasks { get; set; }
 }

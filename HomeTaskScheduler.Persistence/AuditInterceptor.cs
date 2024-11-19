@@ -1,4 +1,5 @@
 ﻿using HomeTaskScheduler.Domain.Common;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
@@ -6,33 +7,43 @@ namespace HomeTaskScheduler.Persistence;
 
 public class AuditInterceptor : SaveChangesInterceptor
 {
-    private readonly Guid executorUserId;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public AuditInterceptor(Guid executorUserId)
+    public AuditInterceptor(IHttpContextAccessor httpContextAccessor)
     {
-        this.executorUserId = executorUserId;
+        _httpContextAccessor = httpContextAccessor;
     }
 
-    public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result,
+    public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(
+        DbContextEventData eventData, InterceptionResult<int> result,
         CancellationToken cancellationToken = new())
     {
         var context = eventData.Context;
         if (context == null) return await base.SavingChangesAsync(eventData, result, cancellationToken);
 
+        var httpContext = _httpContextAccessor.HttpContext;
+        if (httpContext == null) return await base.SavingChangesAsync(eventData, result, cancellationToken);
+
+        var executorUserId = httpContext.User.FindFirst("sub")?.Value; // Або інший спосіб отримання ID користувача
+
+        if (executorUserId == null) return await base.SavingChangesAsync(eventData, result, cancellationToken);
+
         try
         {
-            foreach (var entry in context.ChangeTracker.Entries<IAuditableEntity>())
+            foreach (var entry in context.ChangeTracker.Entries())
             {
-                var loggedEntity = entry.Entity;
+                var loggedEntity = entry.Entity as IAuditableEntity;
+                if (loggedEntity == null) continue;
+
                 switch (entry.State)
                 {
                     case EntityState.Added:
                         loggedEntity.CreatedOn = DateTime.UtcNow;
-                        loggedEntity.CreatedBy = executorUserId;
+                        loggedEntity.CreatedBy = Guid.Parse(executorUserId);
                         break;
                     case EntityState.Modified:
                         loggedEntity.ModifiedOn = DateTime.UtcNow;
-                        loggedEntity.ModifiedBy = executorUserId;
+                        loggedEntity.ModifiedBy = Guid.Parse(executorUserId);
                         break;
                 }
             }

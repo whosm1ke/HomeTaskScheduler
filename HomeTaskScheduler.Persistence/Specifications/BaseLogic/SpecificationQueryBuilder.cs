@@ -35,6 +35,7 @@ public static class SpecificationQueryBuilder
         {
             queryable = queryable.AsSplitQuery();
         }
+        
 
         return queryable;
     }

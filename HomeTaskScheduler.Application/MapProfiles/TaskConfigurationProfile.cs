@@ -15,10 +15,12 @@ public class TaskConfigurationProfile : Profile
             .ForMember(dest => dest.CourseIds, opt => opt.MapFrom(src => src.Courses.Select(s => s.Id)))
             .ForMember(dest => dest.StudentIds, opt => opt.MapFrom(src => src.Students.Select(c => c.Id)))
             .ForMember(dest => dest.SubmissionIds, opt => opt.MapFrom(src => src.Submissions.Select(c => c.Id)))
+            .ForMember(dest => dest.CommentIds, opt => opt.MapFrom(src => src.Comments.Select(c => c.Id)))
             .ReverseMap()
             .ForMember(dest => dest.Attachments, opt => opt.Ignore())
             .ForMember(dest => dest.Courses, opt => opt.Ignore())
             .ForMember(dest => dest.Students, opt => opt.Ignore())
+            .ForMember(dest => dest.Comments, opt => opt.Ignore())
             .ForMember(dest => dest.Submissions, opt => opt.Ignore());
 
         CreateMap<AbstractTaskConfiguration, CreateTaskConfigurationDto>()

@@ -11,6 +11,7 @@ public abstract class AbstractTaskConfigurationDto  : IEntity, ICommonTaskConfig
     public ICollection<Guid> CourseIds { get; set; }
     public ICollection<Guid> StudentIds { get; set; }
     public ICollection<Guid>? SubmissionIds { get; set; }
+    public ICollection<Guid>? CommentIds { get; set; }
     public uint? MaxMark { get; set; }
     public DateTime DueDate { get; set; }
     public Guid? ThemeId { get; set; }
