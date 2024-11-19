@@ -3,4 +3,7 @@ using MediatR;
 
 namespace HomeTaskScheduler.Application.CQRS.Theme.Requests.Queries;
 
-public class GetAllThemeRequest : UserRequest, IRequest<IReadOnlyList<ThemeDto>>;
+public class GetAllThemesRequest : UserRequest, IRequest<IReadOnlyList<ThemeDto>>
+{
+    public Guid CourseId { get; set; }
+}

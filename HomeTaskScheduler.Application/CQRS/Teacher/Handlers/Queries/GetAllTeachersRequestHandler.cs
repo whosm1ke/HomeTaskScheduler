@@ -6,7 +6,7 @@ using HomeTaskScheduler.Application.DTO.Users;
 
 namespace HomeTaskScheduler.Application.CQRS.Teacher.Handlers.Queries;
 
-public class GetAllTeacherRequestHandler : IRequestHandler<GetAllTeacherRequest, IReadOnlyList<UserListDto>>
+public class GetAllTeacherRequestHandler : IRequestHandler<GetAllTeachersRequest, IReadOnlyList<UserListDto>>
 {
     private readonly IUnitOfWork unitOfWork;
     private readonly IMapper mapper;
@@ -17,9 +17,9 @@ public class GetAllTeacherRequestHandler : IRequestHandler<GetAllTeacherRequest,
         this.mapper = mapper;
     }
 
-    public async Task<IReadOnlyList<UserListDto>> Handle(GetAllTeacherRequest request, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<UserListDto>> Handle(GetAllTeachersRequest request, CancellationToken cancellationToken)
     {
-        var teachers = await unitOfWork.UserRepository.GetAllAsync();
+        var teachers = await unitOfWork.UserRepository.GetAllTeachersAsync(request.CourseId);
 
 
         return mapper.Map<List<UserListDto>>(teachers);

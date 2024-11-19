@@ -6,20 +6,20 @@ using HomeTaskScheduler.Application.DTO.Users;
 
 namespace HomeTaskScheduler.Application.CQRS.Student.Handlers.Queries;
 
-public class GetAllStudentRequestHandler : IRequestHandler<GetAllStudentRequest, IReadOnlyList<UserListDto>>
+public class GetAllStudentsRequestHandler : IRequestHandler<GetAllStudentsRequest, IReadOnlyList<UserListDto>>
 {
     private readonly IUnitOfWork unitOfWork;
     private readonly IMapper mapper;
 
-    public GetAllStudentRequestHandler(IUnitOfWork unitOfWork, IMapper mapper)
+    public GetAllStudentsRequestHandler(IUnitOfWork unitOfWork, IMapper mapper)
     {
         this.unitOfWork = unitOfWork;
         this.mapper = mapper;
     }
 
-    public async Task<IReadOnlyList<UserListDto>> Handle(GetAllStudentRequest request, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<UserListDto>> Handle(GetAllStudentsRequest request, CancellationToken cancellationToken)
     {
-        var students = await unitOfWork.UserRepository.GetAllAsync();
+        var students = await unitOfWork.UserRepository.GetAllStudentsAsync(request.CourseId);
 
 
         return mapper.Map<List<UserListDto>>(students);

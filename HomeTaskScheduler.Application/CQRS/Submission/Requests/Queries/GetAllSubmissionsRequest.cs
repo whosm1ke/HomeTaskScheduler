@@ -3,4 +3,7 @@ using MediatR;
 
 namespace HomeTaskScheduler.Application.CQRS.Submission.Requests.Queries;
 
-    public class GetAllSubmissionRequest : UserRequest, IRequest<IReadOnlyList<AbstractSubmissionDto>>;
+public class GetAllSubmissionsRequest : UserRequest, IRequest<IReadOnlyList<AbstractSubmissionDto>>
+{
+    public Guid CourseId { get; set; }
+}

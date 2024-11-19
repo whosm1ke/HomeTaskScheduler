@@ -3,4 +3,7 @@ using MediatR;
 
 namespace HomeTaskScheduler.Application.CQRS.TaskConfiguration.Requests.Queries;
 
-    public class GetAllTaskConfigurationRequest : UserRequest, IRequest<IReadOnlyList<TaskConfigurationListDto>>;
+public class GetAllTaskConfigurationsRequest : UserRequest, IRequest<IReadOnlyList<TaskConfigurationListDto>>
+{
+    public Guid CourseId { get; set; }
+}

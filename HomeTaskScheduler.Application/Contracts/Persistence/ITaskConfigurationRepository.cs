@@ -8,4 +8,5 @@ public interface ITaskConfigurationRepository : IGenericRepository<AbstractTaskC
     public Task<QuestionTaskConfiguration?> GetQuestionTaskConfigurationByIdAsync(Guid id);
     public Task<SimpleTaskConfiguration?> GetSimpleTaskConfigurationByIdAsync(Guid id);
     public Task<TestTaskConfiguration?> GetTestTaskConfigurationByIdAsync(Guid id);
+    Task<IReadOnlyList<AbstractTaskConfiguration>> GetAllAsync(Guid courseId);
 }

@@ -7,7 +7,7 @@ using HomeTaskScheduler.Application.DTO.Common;
 namespace HomeTaskScheduler.Application.CQRS.Submission.Handlers.Queries;
 
 public class
-    GetAllSubmissionRequestHandler : IRequestHandler<GetAllSubmissionRequest, IReadOnlyList<AbstractSubmissionDto>>
+    GetAllSubmissionRequestHandler : IRequestHandler<GetAllSubmissionsRequest, IReadOnlyList<AbstractSubmissionDto>>
 {
     private readonly IUnitOfWork unitOfWork;
     private readonly IMapper mapper;
@@ -17,9 +17,9 @@ public class
         this.unitOfWork = unitOfWork;
         this.mapper = mapper;
     }
-    public async Task<IReadOnlyList<AbstractSubmissionDto>> Handle(GetAllSubmissionRequest request, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<AbstractSubmissionDto>> Handle(GetAllSubmissionsRequest request, CancellationToken cancellationToken)
     {
-        var submissions = await unitOfWork.SubmissionRepository.GetAllAsync();
+        var submissions = await unitOfWork.SubmissionRepository.GetAllAsync(request.CourseId);
 
         return mapper.Map<List<AbstractSubmissionDto>>(submissions);
     }

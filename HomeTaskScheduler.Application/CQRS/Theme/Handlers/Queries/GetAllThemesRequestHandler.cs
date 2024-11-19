@@ -6,7 +6,7 @@ using HomeTaskScheduler.Application.DTO.Feed;
 
 namespace HomeTaskScheduler.Application.CQRS.Theme.Handlers.Queries;
 
-public class GetAllThemeRequestHandler : IRequestHandler<GetAllThemeRequest, IReadOnlyList<ThemeDto>>
+public class GetAllThemeRequestHandler : IRequestHandler<GetAllThemesRequest, IReadOnlyList<ThemeDto>>
 {
     private readonly IUnitOfWork unitOfWork;
     private readonly IMapper mapper;
@@ -17,9 +17,9 @@ public class GetAllThemeRequestHandler : IRequestHandler<GetAllThemeRequest, IRe
         this.mapper = mapper;
     }
 
-    public async Task<IReadOnlyList<ThemeDto>> Handle(GetAllThemeRequest request, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<ThemeDto>> Handle(GetAllThemesRequest request, CancellationToken cancellationToken)
     {
-        var themes = await unitOfWork.ThemeRepository.GetAllAsync();
+        var themes = await unitOfWork.ThemeRepository.GetAllAsync(request.CourseId);
 
         return mapper.Map<List<ThemeDto>>(themes);
     }
